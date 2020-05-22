@@ -16,7 +16,10 @@ h2 {
   font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
 }
 
-
+h3 {
+  font-family: 'Ruthie', cursive;
+  font-size: 48px;
+}
 
 
 @media (prefers-reduced-motion: no-preference) {
