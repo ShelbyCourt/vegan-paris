@@ -2,14 +2,14 @@ import React from 'react';
 import Restaurant from './Restaurant'
 
 function List(props) {
-    const restaurantMap = props.addedRestaurant.map((restaurant) => (
-    <Restaurant 
-        key = {restaurant.id}
-        saveName = {props.saveName}
-        saveArrondissement={props.saveArrondissement}
-        saveRating={props.saveRating}
-        removeRestaurant={props.removeRestaurant}
-        data={restaurant}
+  const restaurantMap = props.addedRestaurant.map((restaurant) => (
+    <Restaurant
+      key={restaurant.id}
+      saveName={props.saveName}
+      saveArrondissement={props.saveArrondissement}
+      saveRating={props.saveRating}
+      removeRestaurant={props.removeRestaurant}
+      data={restaurant}
     />
     ))
 
@@ -22,8 +22,7 @@ function List(props) {
     {restaurantMap}
       </div>
    </div>
-   )
-
+  )
 }
 
 

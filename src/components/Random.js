@@ -34,7 +34,7 @@ class Random extends Component {
 
         return (
             <div style={{ display: 'flex', justifyContent: 'center'}}>
-                <h3>Mes restaurants végans</h3>
+                {restaurantMap}
             </div>
         )
 

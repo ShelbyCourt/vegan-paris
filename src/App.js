@@ -7,6 +7,7 @@ import Random from './components/Random';
 
 import './App.css';
 
+
 class App extends Component {
   constructor () {
     super ()
@@ -41,7 +42,13 @@ removeRestaurant (id) {
     return(
       <div className="App">
         <Header />
-        <List addedRestaurant={this.addedRestaurant} />
+        <h3>Découvrir</h3>
+        <Random addedRestaurant={this.addedRestaurant} />
+        <List 
+          addedRestaurant={this.state.addedRestaurant}
+          saveRating={this.saveRating}
+          removeRestaurant={this.removeRestaurant}
+          />
       </div>
     )
 

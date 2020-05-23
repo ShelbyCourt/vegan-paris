@@ -17,10 +17,10 @@ class Discover extends Component {
 
     render() {
         return (
-            <div>
-
+            <div>                
                 <img
                     scr={this.props.data.image}
+                    alt={this.props.data.name}
                     onClick={() => this.checkDiscover()}
                     />
                     <p>{this.props.data.name}</p>
