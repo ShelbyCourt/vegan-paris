@@ -1,4 +1,6 @@
-[
+
+module.exports = {
+    restaurantList: [
     {
         "restaurant": "Le Grenier de Notre-Dame",
         "Arrondissement": "5th",
@@ -46,3 +48,4 @@
     }
 
 ]
+};

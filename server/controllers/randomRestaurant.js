@@ -1,14 +1,13 @@
-const axios = require('axios')
+const restaurants =require('../restaurants')
 
 module.exports = {
     getRandomRestaurant: (req, res) => {
-        const randomRestaurant = []
-        const randRest = Math.ceil(Math.random() * 5)
-
-        const baseURL = 'http://localhost:3000/restaurants.json'
-
-        axios.get(baseURL + randRest).then((response1) => {
-            randomRestaurant.push(response1.data)
-        })
+        console.log('getRandomRestaurant');
+        console.log('First restaurant name: ' + restaurants.restaurantList[0].restaurant);
+        const randRestIndex = Math.ceil(Math.random() * 4);  // get random number, 0 - 4
+        const restaurant = restaurants.restaurantList[randRestIndex];
+        // console.log('restaurant: ' + restaurant);
+        res.status(200).send(restaurant);
+        // res.status(200).send('Hello');
     }
 }

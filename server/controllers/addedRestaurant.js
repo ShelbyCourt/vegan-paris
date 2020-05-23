@@ -1,44 +1,45 @@
-const restaurant = [{ name: '' , arrondissement: '', cuisine: '', rating: '', id: '', image: ''}]
+const restaurants = [{ name: '' , arrondissement: '', cuisine: '', rating: '', id: '', image: ''}]
+let id = 1
 
 module.exports = {
     getAddedRestaurant: (req, res) => {
-        res.status(200).send(restaurant)
+        res.status(200).send(restaurants)
     },
     addRestaurant: (res, req) => {
         const {name, arrondissement, cuisine, rating} = req.body
 
         const newRestaurant = {id, name, arrondissement, cuisine, rating}
 
-        restaurant.push(newRestaurant)
+        restaurants.push(newRestaurant)
 
         id++
 
-        res.status(200).send(restaurant)
+        res.status(200).send(restaurants)
     },
 
     editRating: (req, res) => {
         const { restaurant_id } = req.params
         const { newRating} = req.body
 
-        const index = restaurant.findIndex((element) => element.id ===+ restaurant.id)
+        const index = restaurants.findIndex((element) => element.id ===+ restaurants.id)
         
-        restaurant[index].rating = newRating
+        restaurants[index].rating = newRating
 
-        res.status(200).send(restaurant)
+        res.status(200).send(restaurants)
 
     },
 
     deleteRestaurant: (req, res) => {
         const {restaurant_id} = req.params
-        const index = restaurant.findIndex((element) => element.id === +restaurant.id)
+        const index = restaurants.findIndex((element) => element.id === +restaurants.id)
 
         if (index === -1) { 
         return res.status(404).send('Restaurant not found')
         }
 
-        restaurant.splice(index, 1)
+        restaurants.splice(index, 1)
 
-        res.status(200).send(restaurant)
+        res.status(200).send(restaurants)
     },
 
 }
