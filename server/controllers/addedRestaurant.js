@@ -1,5 +1,6 @@
 const restaurants = [{ name: '' , arrondissement: '', cuisine: '', rating: '', id: '', image: ''}]
 let id = 1
+console.log(restaurants)
 
 module.exports = {
     getAddedRestaurant: (req, res) => {
@@ -9,29 +10,30 @@ module.exports = {
         const {name, arrondissement, cuisine, rating} = req.body
 
         const newRestaurant = {id, name, arrondissement, cuisine, rating}
-
+        console.log(newRestaurant);
         restaurants.push(newRestaurant)
 
         id++
 
         res.status(200).send(restaurants)
     },
+  
 
     editRating: (req, res) => {
         const { restaurant_id } = req.params
         const { newRating} = req.body
 
-        const index = restaurants.findIndex((element) => element.id ===+ restaurants.id)
+        const index = restaurants.findIndex((element) => element.id === +restaurants_id)
         
         restaurants[index].rating = newRating
 
         res.status(200).send(restaurants)
-
     },
 
     deleteRestaurant: (req, res) => {
         const {restaurant_id} = req.params
-        const index = restaurants.findIndex((element) => element.id === +restaurants.id)
+
+        const index = restaurants.findIndex((element) => element.id === +restaurants_id)
 
         if (index === -1) { 
         return res.status(404).send('Restaurant not found')
@@ -41,5 +43,4 @@ module.exports = {
 
         res.status(200).send(restaurants)
     },
-
 }

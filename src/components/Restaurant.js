@@ -9,7 +9,6 @@ class Restaurant extends Component {
         }
     }
 
-
     toggleEdit () {
         this.state({
             isEditRating: !this.state.isEditRating
@@ -22,11 +21,11 @@ class Restaurant extends Component {
         })
     }
 
-    // handleSaveRating (){
-    //     const { data } = this.props
-    //     this.props.saveRating(data, id, this.state.userInput)
-    //     this.toggleEdit()
-    // }
+    //   handleSaveRating (){
+    //       const { data } = this.props
+    //       this.props.saveRating(data, id, this.state.userInput)
+    //       this.toggleEdit()
+    //   }
 
     render () {
         return (
