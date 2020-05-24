@@ -3,7 +3,7 @@ module.exports = {
     restaurantList: [
     {
         "restaurant": "Le Grenier de Notre-Dame",
-        "Arrondissement": "5th",
+        "Arrondissement": "5e",
         "cuisine": "Végétarien et Macrobiotique",
         "rating": "4.2",
         "id": "1",
@@ -13,7 +13,7 @@ module.exports = {
 
     {
         "restaurant": "Végét'Halles",
-        "Arrondissement": "1st",
+        "Arrondissement": "1er",
         "cuisine": "Vegan, Méditerranée, et des petits plats réconfortants",
         "rating": "4.1",
         "id": "2",
@@ -22,7 +22,7 @@ module.exports = {
 
     {
         "restaurant": "Cloud Cakes",
-        "Arrondissement": "2nd",
+        "Arrondissement": "2e",
         "cuisine": "Café Végan",
         "rating": "4.6",
         "id": "3",
@@ -31,7 +31,7 @@ module.exports = {
 
     {
         "restaurant": "Hank Pizza",
-        "Arrondissement": "3rd",
+        "Arrondissement": "3ème",
         "cuisine": "Pizza",
         "rating": "4.6",
         "id": "4",
@@ -40,12 +40,57 @@ module.exports = {
 
     {
         "restaurant": "Wild & The Moon",
-        "Arrondissement": "3rd",
+        "Arrondissement": "3ème",
         "cuisine": "Dine-In, Breakfast",
         "rating": "4.1",
         "id": "5",
         "image": ""
-    }
+    },
+
+    {
+        "restaurant": "Le Grenier de Notre-Dame",
+        "Arrondissement": "5e",
+        "cuisine": "Végétarien et Macrobiotique",
+        "rating": "4.2",
+        "id": "6",
+        "image": ""
+    },
+
+    {
+        "restaurant": "Panasia",
+        "Arrondissement": "15ème",
+        "cuisine": "Bistronomie asiatique",
+        "rating": "3.8",
+        "id": "7",
+        "image": ""
+    },
+
+    {
+        "restaurant": "Le Pain Quoditien",
+        "Arrondissement": "18ème",
+        "cuisine": "Frais, de saison, et savoureux",
+        "rating": "3.9",
+        "id": "8",
+        "image": ""
+    },
+
+    {
+        "restaurant": "Soya",
+        "Arrondissement": "11ème",
+        "cuisine": "Bio, Fusion, vegan",
+        "rating": "4.5",
+        "id": "9",
+        "image": ""
+    },
+
+    {
+        "restaurant": "La Bonne Heure",
+        "Arrondissement": "13ème",
+        "cuisine": "Cuisine Végétarienne et Végétalienne de Saison",
+        "rating": "4.4",
+        "id": "10",
+        "image": ""
+    },
 
 ]
 };

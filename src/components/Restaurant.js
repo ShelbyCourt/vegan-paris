@@ -40,7 +40,7 @@ class Restaurant extends Component {
                         <button onClick={() => this.toggleEdit()}>Cancel</button>
                         </div>
                 )}
-                <button onClick={() => this.props.releaseRestaurant(this.props.data.id)}>
+                <button onClick={() => this.props.removeRestaurant(this.props.data.id)}>
                     Remove
                 </button>
             </div>

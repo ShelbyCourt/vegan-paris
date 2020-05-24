@@ -20,9 +20,9 @@ class App extends Component {
 componentDidMount () {
   axios.get('/api/restaurants').then((res) => {
     this.setState({
-      addedRestaurant: res.data,
+      addedRestaurant: [res.data],
     }) 
-      console.log('res: ' + JSON.stringify(res.data))
+//      console.log('res: ' + JSON.stringify(res.data))
   })
 }
 
@@ -30,7 +30,7 @@ addRestaurant (name, arrondissement, cuisine, rating) {
   const body = { name, arrondissement, cuisine, rating }
   axios.post('/api/restaurants', body).then((res) => { 
     this.setState({
-      addedRestaurant: res.data,
+      addedRestaurant: [res.data],
     })
   })
 }
@@ -41,7 +41,7 @@ saveRating (id, newRating) {
 
   axios.put(`/api/restaurants/${id}`, body).then((res) => {
     this.setState({
-      addedRestaurant: res.data,
+      addedRestaurant: [res.data],
     })
   })
 }
@@ -49,7 +49,7 @@ saveRating (id, newRating) {
 removeRestaurant (id) {
   axios.delete(`/api/restaurants/${id}`).then((res) => {
     this.setState({
-      addedRestaurant: res.data,
+      addedRestaurant: [res.data],
     })
   })
 }
@@ -60,6 +60,7 @@ removeRestaurant (id) {
         <Header />
         <h3>Découvrir</h3>
         <Random addRestaurant={this.addRestaurant} />
+        <button onClick={() => this.addRestaurant()}>Add to List</button>  
         <List 
           addedRestaurant={this.state.addedRestaurant}
           saveRating={this.saveRating}

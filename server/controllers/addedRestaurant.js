@@ -1,4 +1,4 @@
-const restaurants = [{ name: '' , arrondissement: '', cuisine: '', rating: '', id: '', image: ''}]
+const restaurants = [{ restaurant: '' , arrondissement: '', cuisine: '', rating: '', id: '', image: ''}]
 let id = 1
 
 
@@ -10,12 +10,12 @@ module.exports = {
 
     addRestaurant: (res, req) => {
         console.log('req: ' + Object.getOwnPropertyNames(req));
-        console.log('body: ' + req._hasBody)
-        const {name, arrondissement, cuisine, rating} = req.body
+        console.log('body: ' + req._hasBody);
+        const {restaurant, arrondissement, cuisine, rating} = req.body
 
-        const newRestaurant = {id, name, arrondissement, cuisine, rating}
+        const newRestaurant = {restaurant, arrondissement, cuisine, rating, id}
         console.log(newRestaurant);
-        restaurants.push(newRestaurant)
+        restaurants.push(newRestaurant);
 
         id++
 

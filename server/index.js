@@ -3,7 +3,6 @@ const app = express()
 const randomCtrl = require('./controllers/randomRestaurant')
 const addedCtrl = require('./controllers/addedRestaurant')
 
-
 const SERVER_PORT = 3388
 
 app.use(express.json())

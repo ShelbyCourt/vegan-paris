@@ -9,18 +9,24 @@
 
 h1 {
   font-family: 'Ruthie', cursive;
-  font-size: 76px;
+  font-size: 86px;
+  font-style: normal;
+  line-height: 60px;
 }
 
-h2 {
+h2, p {
   font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+  font-size: 28px;
+  line-height: 10px;
 }
 
 h3 {
   font-family: 'Ruthie', cursive;
   font-size: 48px;
+  font-style: normal;
   background-color: black;
   color: white;
+  line-height: 56px;
 }
 
 
@@ -28,6 +34,12 @@ h3 {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+.P2 {
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+  font-size: 18px;
+  line-height: 8px;
 }
 
 .App-header {
