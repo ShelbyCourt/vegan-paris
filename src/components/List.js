@@ -3,6 +3,7 @@ import Restaurant from './Restaurant'
 
 function List(props) {
   const restaurantMap = props.addedRestaurant.map((restaurant) => (
+    // = props.restaurantList.map ...
     <Restaurant
       key={restaurant.id}
       saveName={props.saveName}

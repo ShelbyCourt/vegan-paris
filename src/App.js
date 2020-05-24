@@ -20,14 +20,15 @@ class App extends Component {
 componentDidMount () {
   axios.get('/api/restaurants').then((res) => {
     this.setState({
-      addedRestaurant: [res.data],
+      addedRestaurant: res.data,
+      // restaurantList: res.data,
     }) 
 //      console.log('res: ' + JSON.stringify(res.data))
   })
 }
 
-addRestaurant (name, arrondissement, cuisine, rating) {
-  const body = { name, arrondissement, cuisine, rating }
+addRestaurant (restaurant, arrondissement, cuisine, rating) {
+  const body = { restaurant, arrondissement, cuisine, rating }
   axios.post('/api/restaurants', body).then((res) => { 
     this.setState({
       addedRestaurant: [res.data],
@@ -60,9 +61,9 @@ removeRestaurant (id) {
         <Header />
         <h3>Découvrir</h3>
         <Random addRestaurant={this.addRestaurant} />
-        <button onClick={() => this.addRestaurant()}>Add to List</button>  
         <List 
           addedRestaurant={this.state.addedRestaurant}
+          //restaurantList={this.state.restaurantList}
           saveRating={this.saveRating}
           removeRestaurant={this.removeRestaurant}
           />

@@ -1,11 +1,12 @@
 const express = require('express')
 const app = express()
+app.use(express.json())
 const randomCtrl = require('./controllers/randomRestaurant')
 const addedCtrl = require('./controllers/addedRestaurant')
 
 const SERVER_PORT = 3388
 
-app.use(express.json())
+
 //app.use(express.bodyParser())
 
 app.get('/api/random-restaurant', randomCtrl.getRandomRestaurant)

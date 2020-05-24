@@ -8,9 +8,9 @@ module.exports = {
     },
 
 
-    addRestaurant: (res, req) => {
-        console.log('req: ' + Object.getOwnPropertyNames(req));
-        console.log('body: ' + req._hasBody);
+    addRestaurant: (req, res) => {
+    // console.log('req: ' + Object.getOwnPropertyNames(req));
+
         const {restaurant, arrondissement, cuisine, rating} = req.body
 
         const newRestaurant = {restaurant, arrondissement, cuisine, rating, id}
