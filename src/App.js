@@ -4,10 +4,7 @@ import List from './components/List';
 import Random from './components/Random';
 import axios from 'axios'
 
-
-
 import './App.css';
-
 
 class App extends Component {
   constructor () {
@@ -16,17 +13,18 @@ class App extends Component {
       addedRestaurant: [],
   }
   this.addRestaurant = this.addRestaurant.bind(this)
-
+  this.saveRating = this.saveRating.bind(this)
+  this.removeRestaurant = this.removeRestaurant.bind(this)
 }
 
 componentDidMount () {
   axios.get('/api/restaurants').then((res) => {
     this.setState({
       addedRestaurant: res.data,
-    })
+    }) 
+      console.log('res: ' + JSON.stringify(res.data))
   })
 }
-
 
 addRestaurant (name, arrondissement, cuisine, rating) {
   const body = { name, arrondissement, cuisine, rating }
@@ -48,7 +46,6 @@ saveRating (id, newRating) {
   })
 }
 
-
 removeRestaurant (id) {
   axios.delete(`/api/restaurants/${id}`).then((res) => {
     this.setState({
@@ -57,13 +54,12 @@ removeRestaurant (id) {
   })
 }
 
-
   render () {
     return(
       <div className="App">
         <Header />
         <h3>Découvrir</h3>
-        <Random addedRestaurant={this.addedRestaurant} />
+        <Random addRestaurant={this.addRestaurant} />
         <List 
           addedRestaurant={this.state.addedRestaurant}
           saveRating={this.saveRating}
@@ -71,13 +67,7 @@ removeRestaurant (id) {
           />
       </div>
     )
-
   }
-
-
-
-
-
 }
 
 

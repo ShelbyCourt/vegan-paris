@@ -23,7 +23,7 @@ class Discover extends Component {
                     alt={this.props.data.name}
                     onClick={() => this.checkDiscover()}
                     />
-                    <p>{this.props.data.name}</p>
+                <p>{this.props.data.restaurant}</p>
             </div>
         )
     }

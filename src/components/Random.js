@@ -10,13 +10,12 @@ class Random extends Component {
             randomRestaurant: [],
         }
         this.componentDidMount = this.componentDidMount.bind(this)
-    
     }
 
     componentDidMount() {
-        axios.get('./restaurants.json').then((res) => {
+        axios.get('/api/random-restaurant').then((res) => {
             this.setState({
-                restaurants: res.data,
+                randomRestaurant: [res.data],
             })
         })
     }
@@ -24,21 +23,18 @@ class Random extends Component {
     render () {
         const restaurantMap = this.state.randomRestaurant.map((restaurant) => (
             <Discover 
-            key={restaurant.id}
-            addRestaurant={this.props.addRestaurant}
-            data={restaurant}
-            refreshFn={this.componentDidMount}
+             key={restaurant.id}
+             addRestaurant={this.props.addRestaurant}
+             data={restaurant}
+             refreshFn={this.componentDidMount}
             />
         ))
-
 
         return (
             <div style={{ display: 'flex', justifyContent: 'center'}}>
                 {restaurantMap}
             </div>
         )
-
-
     }
 }
 

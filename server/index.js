@@ -7,6 +7,7 @@ const addedCtrl = require('./controllers/addedRestaurant')
 const SERVER_PORT = 3388
 
 app.use(express.json())
+//app.use(express.bodyParser())
 
 app.get('/api/random-restaurant', randomCtrl.getRandomRestaurant)
 
