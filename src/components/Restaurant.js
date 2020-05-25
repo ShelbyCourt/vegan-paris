@@ -31,7 +31,7 @@ class Restaurant extends Component {
 
     render() {
         return (
-        <div>
+        <div className="RestList">
 
             <p>{this.props.data.restaurant}</p>
 
