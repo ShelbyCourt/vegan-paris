@@ -10,7 +10,7 @@ class App extends Component {
   constructor () {
     super ()
     this.state = {
-      addedRestaurant: [],
+      addedRestaurant: []
   }
   this.addRestaurant = this.addRestaurant.bind(this)
   this.saveRating = this.saveRating.bind(this)
@@ -31,18 +31,17 @@ addRestaurant (restaurant, arrondissement, cuisine, rating) {
   const body = { restaurant, arrondissement, cuisine, rating }
   axios.post('/api/restaurants', body).then((res) => { 
     this.setState({
-      addedRestaurant: [res.data],
+      addedRestaurant: res.data,
     })
   })
 }
-
 
 saveRating (id, newRating) {
   const body = { newRating}
 
   axios.put(`/api/restaurants/${id}`, body).then((res) => {
     this.setState({
-      addedRestaurant: [res.data],
+      addedRestaurant: res.data,
     })
   })
 }
@@ -50,7 +49,7 @@ saveRating (id, newRating) {
 removeRestaurant (id) {
   axios.delete(`/api/restaurants/${id}`).then((res) => {
     this.setState({
-      addedRestaurant: [res.data],
+      addedRestaurant: res.data,
     })
   })
 }

@@ -11,7 +11,7 @@ const SERVER_PORT = 3388
 
 app.get('/api/random-restaurant', randomCtrl.getRandomRestaurant)
 
-// Endpoints
+// Endpoints for App Restaurant List
 app.get('/api/restaurants', addedCtrl.getAddedRestaurant)
 app.post('/api/restaurants', addedCtrl.addRestaurant)
 app.put('/api/restaurants/:restaurant_id', addedCtrl.editRating)

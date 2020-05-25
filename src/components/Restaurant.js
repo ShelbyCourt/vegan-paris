@@ -10,42 +10,49 @@ class Restaurant extends Component {
     }
 
     toggleEdit () {
-        this.state({
+        console.log("inside toggleEdit!!!");
+        this.setState({
             isEditRating: !this.state.isEditRating
         })
     }
 
-    handleChange (e) {
-        this.state ({
-            userInput: e.target.value
+    handleChange(e) {
+        this.setState({
+          userInput: e.target.value,
         })
-    }
+      }
 
-    //   handleSaveRating (){
-    //       const { data } = this.props
-    //       this.props.saveRating(data, id, this.state.userInput)
-    //       this.toggleEdit()
-    //   }
+      handleSaveRating (){
+          const { data } = this.props
+          this.props.saveRating(data.id, this.state.userInput)
+          this.toggleEdit()
+      }
 
-    render () {
+
+    render() {
         return (
-            <div>
-                <img scr={this.props.data.image} alt={this.props.data.name} />
-                {!this.state.isEditRating ? (
-                    <p onClick={() => this.toggleEdit()}>{this.props.data.name}</p>
-                ) : (
-                    <div>
-                        <input onChange={(e) => this.handleChange(e)} />
-                        <button onClick={() => this.handleSaveRating()}>Save</button>
-                        <button onClick={() => this.toggleEdit()}>Cancel</button>
-                        </div>
-                )}
-                <button onClick={() => this.props.removeRestaurant(this.props.data.id)}>
-                    Remove
-                </button>
-            </div>
-        )}
+        <div>
 
-}
+            <p>{this.props.data.restaurant}</p>
+
+            {!this.state.isEditRating ? (
+            <p className="P2" onClick={() => this.toggleEdit()}>Rating: {this.props.data.rating}</p>
+  
+            ) : (
+            <div>
+                <input onChange={(e) => this.handleChange(e)} />
+                <button onClick={() => this.handleSaveRating()}>Save</button>
+                <button onClick={() => this.toggleEdit()}>Cancel</button>
+            </div>
+            )}
+
+            <button onClick={() => this.props.removeRestaurant(this.props.data.id)}>
+            Remove
+            </button>
+
+        </div>
+        )
+        }
+    }
 
 export default Restaurant
