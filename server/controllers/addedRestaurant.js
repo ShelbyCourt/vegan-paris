@@ -29,6 +29,7 @@ module.exports = {
         const index = restaurants.findIndex((element) => element.id === +restaurant_id)
         
         console.log(`editRating req.params = ${JSON.stringify(req.params)}, restaurants_id = ${restaurant_id}, newRating = ${newRating}, index = ${index}`);
+        
         restaurants[index].rating = newRating
 
         res.status(200).send(restaurants)
